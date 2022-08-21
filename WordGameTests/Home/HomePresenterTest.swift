@@ -59,7 +59,7 @@ class HomePresenterTests: XCTestCase
         sut.viewController = spy
         
         // When
-        let wordResponseModel: WordsModel = Bundle.main.decode(FileName.mockWord.rawValue)
+        let wordResponseModel: WordsModel = Bundle.main.decode(FileName.wordMock.rawValue)
         sut.loadTranslationPair(word: wordResponseModel, correctAttempts: 1, wrongAttempts: 1)
         
         //then

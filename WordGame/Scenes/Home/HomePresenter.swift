@@ -14,7 +14,7 @@ class HomePresenter {
 extension HomePresenter: HomePresentationLogic {
     
     func loadTranslationPair(word: WordsModel, correctAttempts: Int, wrongAttempts: Int) {
-        let infoViewModel = HomeInfoViewModel(engText: word.engText, spText: word.spanishText, correctAttempts: correctAttempts, wrongAttempts: wrongAttempts)
+        let infoViewModel = HomeInfoViewModel(engText: word.englishText, spText: word.spanishText, correctAttempts: correctAttempts, wrongAttempts: wrongAttempts)
         let homeVM = HomeViewModel(homeInfoVM: infoViewModel)
         viewController?.loadLanguageWord(homeVM)
     }

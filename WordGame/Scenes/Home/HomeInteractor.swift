@@ -100,11 +100,11 @@ extension HomeInteractor: HomeBuisnessLogic {
     /// - Parameters:
     ///   - vm: home view model
     ///   - isCorrect: attempt value which user have selected
-    func checkTransaltion(_ vm: HomeViewModel?, isCorrect: Bool)  {
+    func checkTransaltion(_ viewModel: HomeViewModel?, isCorrect: Bool)  {
         self.resetTimer()
-        guard !isWordListEmpty(), let vm = vm else { return }
+        guard !isWordListEmpty(), let vm = viewModel else { return }
         let filteredVM = self.allWords.filter ({
-            return $0.engText == vm.homeInfoVM.engText && $0.spanishText == vm.homeInfoVM.spanishText
+            return $0.englishText == vm.homeInfoVM.engText && $0.spanishText == vm.homeInfoVM.spanishText
         })
         if (isCorrect && !filteredVM.isEmpty) || (!isCorrect && filteredVM.isEmpty) {
             //correct Attempts when transation is correct and user chooses correct button OR When transation is wrong and user chooses Wrong button

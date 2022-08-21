@@ -9,7 +9,7 @@ import Foundation
 
 enum FileName: String {
     case words = "words"
-    case mockWord = "wordMock"
+    case wordMock = "wordMock"
 }
 
 extension Bundle {

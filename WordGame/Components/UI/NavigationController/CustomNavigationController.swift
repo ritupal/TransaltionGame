@@ -10,10 +10,10 @@ import UIKit
 class CustomNavigationController: UINavigationController {
     
     override func viewDidLoad() {
-        setupStyle()
+        self.setupNavigationBarStyle()
     }
     
-    private func setupStyle(){
+    private func setupNavigationBarStyle() {
         self.navigationBar.barStyle = Constants.Styles.tabbarStyleColor
         self.navigationBar.isTranslucent = true
         self.navigationBar.isHidden = true

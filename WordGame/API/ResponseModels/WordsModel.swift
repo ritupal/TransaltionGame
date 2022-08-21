@@ -8,11 +8,11 @@
 import Foundation
 
 struct WordsModel: Codable {
-    let engText: String
+    let englishText: String
     var spanishText: String
     
     private enum CodingKeys: String, CodingKey {
-        case engText = "text_eng"
+        case englishText = "text_eng"
         case spanishText = "text_spa"
     }
 }

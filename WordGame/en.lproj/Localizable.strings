@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  WordGame
+
+  Created by Kumari Ritu Pal on 26/07/22.
+  
+*/
+
+// Home Screen
+"HOME_CORRECT_ATTEMPTS" = "Correct attempts: ";
+"HOME_WRONG_ATTEMPTS" = "Wrong attempts: ";
+"HOME_CORRECT_TEXT" = "Correct";
+"HOME_WRONG_TEXT" = "Wrong";
+
+//Alert View
+"ALERT_TITLE_GAME_OVER" = "Game Over";
+"ALERT_BODY" = "You have scored";
+"POINTS" = "points";
+"ALERT_TITLE_QUIT" = "Quit";
+"ALERT_TITLE_RESTART" = "Restart";

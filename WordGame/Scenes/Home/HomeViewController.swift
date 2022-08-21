@@ -12,17 +12,17 @@ class HomeViewController: UIViewController, StoryboardHelper {
     var viewModel: HomeViewModel?
     
     //MARK:- IBOutlets
-    @IBOutlet weak var lblCorrectAttempts: UILabel!
-    @IBOutlet weak var lblWrongAttempts: UILabel!
-    @IBOutlet weak var lblSpanishWord: UILabel!
-    @IBOutlet weak var lblEnglishWord: UILabel!
-    @IBOutlet weak var BtnCorrect: UIButton!
-    @IBOutlet weak var BtnWrong: UIButton!
+    @IBOutlet private weak var lblCorrectAttempts: UILabel!
+    @IBOutlet private weak var lblWrongAttempts: UILabel!
+    @IBOutlet private weak var lblSpanishWord: UILabel!
+    @IBOutlet private weak var lblEnglishWord: UILabel!
+    @IBOutlet private weak var btnCorrect: UIButton!
+    @IBOutlet private weak var btnWrong: UIButton!
     
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.defaultSetup()
+        self.defaultSetup()
         self.setupView()
         self.getLanguageWord()
     }
@@ -40,15 +40,15 @@ class HomeViewController: UIViewController, StoryboardHelper {
     private func setupView() {
         self.lblCorrectAttempts.textColor = Constants.Styles.mainColor
         self.lblWrongAttempts.textColor = Constants.Styles.mainColor
-        self.BtnWrong.backgroundColor = Constants.Styles.mainColor
+        self.btnWrong.backgroundColor = Constants.Styles.mainColor
         setDefaultText()
     }
     
     private func setDefaultText() {
         self.lblCorrectAttempts.text = Constants.HomeScreen.correctAttempts
         self.lblWrongAttempts.text = Constants.HomeScreen.wrongAttempts
-        self.BtnCorrect.setTitle(Constants.HomeScreen.correct, for: .normal)
-        self.BtnWrong.setTitle(Constants.HomeScreen.wrong, for: .normal)
+        self.btnCorrect.setTitle(Constants.HomeScreen.correct, for: .normal)
+        self.btnWrong.setTitle(Constants.HomeScreen.wrong, for: .normal)
     }
     
     private func setLanguageWords(vm: HomeInfoViewModel) {
@@ -102,7 +102,7 @@ extension HomeViewController: HomeDisplayLogic {
         }))
         alert.addAction(UIAlertAction(title: Constants.Alert.rightButtonTitle,
                                       style: .default,
-                                      handler: {[weak self](_: UIAlertAction!) in
+                                      handler: {[weak self] _ in
             self?.interactor?.restartGame()
         }))
         self.present(alert, animated: true, completion: nil)
